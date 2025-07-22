@@ -21,7 +21,7 @@ def student_details(request):
 
 def student_list(request):
     stu = Student.objects.all()
-    serializer = StudentSerializers(stu, many=True)
+    serializer = StudentSerializers(stu, classmany=True)
     json_data = JSONRenderer().render(serializer.data)
     # print(serializer)# here print Serilizers all object when user are create :
     # print(serializer.data)#
